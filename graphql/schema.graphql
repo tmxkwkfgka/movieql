@@ -1,0 +1,35 @@
+
+
+type Person{
+    id:Int!
+    name:String!
+    age:Int!
+    gender:String!
+}
+type Movie{
+    id:Int!
+    title:String!
+    rating:Float!
+    summary:String
+    language:String
+    medium_cover_image:String
+    description_intro: String
+    genres:String
+}
+
+
+
+
+
+type Query{
+    people: [Person]!
+    person(id: Int!): Person!
+    movies(limit: Int, rating:Float):[Movie]!
+    movie(id: Int!): Movie
+    suggestions(id: Int!): [Movie]
+}
+
+type Mutation{
+    addMovie(name: String!, score: Int!): Movie!
+    deleteMovie(id: Int!): Boolean!
+}
